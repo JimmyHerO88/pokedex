@@ -70,7 +70,10 @@ const createPokemonCard = (pokemon) => {
     const poke_types = pokemon.types.map(type => type.type.name);
     const type = main_types.find(type => poke_types.indexOf(type) > -1);
     const color = colors[type];
-    const abilities =  pokemon.abilities.map(ability => ability.ability.name);
+    const abilities =  pokemon.abilities.map((ability) => ability.ability.name);
+    const ability1 = abilities[0];
+    const ability2 = abilities[1];
+    const ability3 = abilities[2];
     const weight = pokemon.weight;
 
     pokemonEl.style.backgroundColor = color;
@@ -84,7 +87,16 @@ const createPokemonCard = (pokemon) => {
                                 <small class="type">Weight: <span><strong>${weight}</strong></span></small><br>
                                 <small class="type">Type: <span><strong>${type}</strong></span></small><br>
                                 <small class="type">Abilities:</small><br>                                
-                                <small class="type"><span><strong>${abilities}</strong></span></small><br>
+                                <small class="type">
+                                    <span>
+                                        <strong>
+                                            <ul>
+                                                <li>${ability1}</li>
+                                                <li>${ability2}</li>
+                                            </ul>
+                                        </strong>
+                                    </span>
+                                </small><br>
                             </div>`; 
     
     pokemonEl.innerHTML = pokemonInnerHtml;
